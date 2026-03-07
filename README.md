@@ -20,7 +20,7 @@ The platform deploys a **Node.js application** using **Helm** through an **Azure
 * CI/CD pipeline using **Azure DevOps**
 * **Docker containerization**
 * **Helm-based Kubernetes deployments**
-* **Trivy security scanning in pipeline**
+* **Trivy security scanning integrated in pipeline**
 * **Terraform Infrastructure as Code**
 * **Prometheus + Grafana monitoring**
 * **Horizontal Pod Autoscaling**
@@ -33,7 +33,7 @@ The platform deploys a **Node.js application** using **Helm** through an **Azure
 
 # 🏗️ Project Architecture
 
-Developer pushes code to GitHub which triggers the **Azure DevOps pipeline**.
+A developer pushes code to the repository which triggers the **Azure DevOps pipeline**.
 
 Pipeline workflow:
 
@@ -42,7 +42,7 @@ Pipeline workflow:
 3. Push image to **Azure Container Registry**
 4. Deploy application to **AKS using Helm**
 
-The Kubernetes cluster runs the application and monitoring stack.
+The Kubernetes cluster runs the application along with the monitoring stack.
 
 ---
 
@@ -104,15 +104,14 @@ aks-devops-project
 ├── k8s
 │   ├── hpa.yaml
 │   ├── ingress.yaml
-│   └── secrets.yaml
+│   └── secret-provider.yaml
 │
 ├── terraform
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
+│   └── main.tf
 │
 ├── docs
-│   └── architecture.png
+│   ├── architecture.png
+│   └── grafana-dashboard.png
 │
 ├── loadtest.js
 └── README.md
@@ -169,6 +168,14 @@ Grafana dashboards visualize:
 * Memory usage
 * Node health
 * Kubernetes cluster metrics
+
+---
+
+# 📊 Monitoring Dashboard
+
+Below is a sample **Grafana dashboard** monitoring Kubernetes metrics collected by Prometheus.
+
+![Grafana Dashboard](docs/grafana-dashboard.png)
 
 ---
 
@@ -301,5 +308,6 @@ http://localhost:3000
 
 # 👨‍💻 Author
 
-Pavan Kumar
-DevOps / Cloud Engineering Project
+**Pavan Kumar Gummadi**
+
+DevOps | Cloud | Kubernetes | Azure Engineering Project
