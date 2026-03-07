@@ -1,8 +1,18 @@
 # 🚀 End-to-End DevOps Platform on Azure AKS
 
+![Azure DevOps](https://img.shields.io/badge/CI%2FCD-Azure%20DevOps-blue)
+![Docker](https://img.shields.io/badge/Container-Docker-blue)
+![Kubernetes](https://img.shields.io/badge/Orchestration-Kubernetes-blue)
+![Helm](https://img.shields.io/badge/Deployment-Helm-blue)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
+![Security](https://img.shields.io/badge/Security-Trivy-green)
+![Monitoring](https://img.shields.io/badge/Monitoring-Prometheus-orange)
+![Dashboard](https://img.shields.io/badge/Dashboard-Grafana-orange)
+
 ### CI/CD • Terraform • Trivy Security Scanning • Prometheus • Grafana • Kubernetes
 
 This project demonstrates a **production-style DevOps platform** built on **Azure Kubernetes Service (AKS)**.
+
 It implements a **complete CI/CD pipeline**, **container security scanning**, **monitoring**, **autoscaling**, and **infrastructure provisioning using Terraform**.
 
 The platform deploys a **Node.js application** using **Helm** through an **Azure DevOps pipeline**.
@@ -12,6 +22,62 @@ The platform deploys a **Node.js application** using **Helm** through an **Azure
 # 📊 Architecture Diagram
 
 ![Architecture](docs/architecture.png)
+
+---
+
+# 🧭 System Architecture Overview
+
+This platform simulates a **production-ready DevOps workflow on Microsoft Azure**.
+
+The architecture separates **application delivery, infrastructure provisioning, security scanning, and monitoring**.
+
+### DevOps Flow
+
+Developer commits code → Git repository
+↓
+Azure DevOps pipeline triggers automatically
+↓
+Docker image is built and scanned using **Trivy**
+↓
+Secure image pushed to **Azure Container Registry (ACR)**
+↓
+Helm deploys the application to **Azure Kubernetes Service (AKS)**
+↓
+Prometheus collects cluster metrics
+↓
+Grafana visualizes monitoring dashboards
+
+---
+
+### Infrastructure Layer
+
+Infrastructure is provisioned using **Terraform**, which creates:
+
+* Azure Resource Group
+* Azure Kubernetes Service (AKS)
+* Azure Container Registry
+* Azure Key Vault
+
+---
+
+### Application Layer
+
+Application deployment uses:
+
+* Docker container images
+* Helm charts
+* Kubernetes Deployments and Services
+
+---
+
+### Observability Layer
+
+Monitoring stack includes:
+
+* Prometheus (metrics collection)
+* Grafana (dashboard visualization)
+* Node Exporter
+* kube-state-metrics
 
 ---
 
@@ -31,64 +97,9 @@ The platform deploys a **Node.js application** using **Helm** through an **Azure
 
 ---
 
-# 🏗️ Project Architecture
-
-A developer pushes code to the repository which triggers the **Azure DevOps pipeline**.
-
-Pipeline workflow:
-
-1. Build Docker image
-2. Scan image using **Trivy**
-3. Push image to **Azure Container Registry**
-4. Deploy application to **AKS using Helm**
-
-The Kubernetes cluster runs the application along with the monitoring stack.
-
----
-
-# 🧰 Technology Stack
-
-## Cloud
-
-* Azure Kubernetes Service (AKS)
-* Azure Container Registry (ACR)
-* Azure Key Vault
-
-## CI/CD
-
-* Azure DevOps Pipelines
-* Helm
-
-## Containers
-
-* Docker
-
-## Security
-
-* Trivy container vulnerability scanning
-* Azure Key Vault secret management
-* TLS certificates using cert-manager
-
-## Monitoring
-
-* Prometheus
-* Grafana
-* Node Exporter
-* kube-state-metrics
-
-## Performance Testing
-
-* k6
-
-## Infrastructure as Code
-
-* Terraform
-
----
-
 # 📂 Project Structure
 
-```
+```text
 aks-devops-project
 │
 ├── app.js
@@ -284,6 +295,37 @@ Deploy → PROD
 
 ---
 
+# 🌐 Platform Components
+
+| Component                | Purpose                           |
+| ------------------------ | --------------------------------- |
+| Azure DevOps             | CI/CD pipeline automation         |
+| Azure Container Registry | Docker image storage              |
+| Azure Kubernetes Service | Container orchestration           |
+| Helm                     | Kubernetes application deployment |
+| Prometheus               | Metrics collection                |
+| Grafana                  | Monitoring dashboards             |
+| Trivy                    | Container vulnerability scanning  |
+| Terraform                | Infrastructure provisioning       |
+
+---
+
+# 🎯 DevOps Capabilities Demonstrated
+
+This project demonstrates practical DevOps skills including:
+
+* Infrastructure as Code using Terraform
+* Automated CI/CD pipelines with Azure DevOps
+* Container security scanning with Trivy
+* Kubernetes application deployment using Helm
+* Horizontal Pod Autoscaling
+* Secret management using Azure Key Vault
+* Monitoring with Prometheus and Grafana
+* Performance testing using k6
+* Environment promotion (DEV → PROD)
+
+---
+
 # ▶️ Running the Application Locally
 
 Build the container:
@@ -303,6 +345,14 @@ Open browser:
 ```
 http://localhost:3000
 ```
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider **starring the repository**.
+
+It helps the project reach more DevOps learners.
 
 ---
 
