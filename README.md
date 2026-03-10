@@ -126,6 +126,12 @@ Azure Kubernetes Service
 
 ---
 
+### Pipeline Execution
+
+Below is a successful Azure DevOps pipeline run showing the automated build, security scan, and deployment stages.
+
+![Azure DevOps Pipeline](docs/pipeline.png)
+
 # 📈 Monitoring and Observability
 
 The platform includes a **Kubernetes monitoring stack**.
